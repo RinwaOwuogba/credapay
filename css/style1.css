@@ -1,0 +1,77 @@
+:root {
+	--creda-yellow: #fdc627;
+	--creda-purple: #2c0046;
+	--ellipse-green: #9bf5af;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	overflow-x: hidden;
+}
+
+.bg-creda-yellow {
+	background-color: var(--creda-yellow);
+}
+
+.section-content {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.creda-header {
+	background-color: var(--creda-purple);
+}
+
+.menu-open .creda-pay-title {
+	position: fixed;
+	z-index: 30;
+}
+
+.menu-open .nav-links {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	padding-top: 20vh;
+	align-items: center;
+	background-color: var(--creda-purple);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 20;
+}
+
+.menu-open .nav-icon-hamburger {
+	display: none;
+}
+
+.menu-open .nav-icon-close {
+	display: block;
+}
+
+.nav-links a:hover {
+	text-decoration: underline;
+	font-weight: 500;
+}
+@media (max-width: 639px) {
+	.phone-image-container {
+		max-width: 14rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.creda-tag-line {
+		line-height: 4.2rem;
+	}
+
+	/* .creda-ellipse {
+		width:
+	} */
+}
