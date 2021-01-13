@@ -60,7 +60,8 @@ body {
 	text-decoration: underline;
 	font-weight: 500;
 }
-@media (max-width: 639px) {
+
+@media (max-width: 1023px) {
 	.phone-image-container {
 		max-width: 14rem;
 	}
