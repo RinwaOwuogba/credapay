@@ -24,11 +24,12 @@
 			rel="stylesheet"
 		/>
 
+		<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 		<title>Credapay</title>
 	</head>
 
 	<body>
-		<header class="py-4 px-4 md:py-5 md:px-16 creda-header mb-72">
+		<header class="py-4 px-4 md:py-5 md:px-16 md:mb-0 creda-header">
 			<div class="section-content">
 				<div
 					class="flex justify-between md:items-center text-white relative md:mb-14"
@@ -113,8 +114,10 @@
 			</div>
 		</header>
 
-		<section class="py-4 px-8 md:py-5 md:px-16 mb-16">
-			<div class="section-content md:px-8 xl:px-16">
+		<section
+			class="features-section pt-60 px-8 md:px-16 md:py-8 md:pt-32 xl:pt-80"
+		>
+			<div class="section-content pt-32 md:px-8 xl:px-16">
 				<h1 class="text-2xl xl:text-5xl font-bold mb-8">App Features</h1>
 
 				<div class="flex flex-col items-center lg:flex-row lg:justify-between">
@@ -200,8 +203,8 @@
 			</div>
 		</section>
 
-		<section class="py-4 px-8 md:py-5 md:px-16 mb-28 lg:mb-44">
-			<div class="section-content md:px-8 xl:px-16">
+		<section class="deals-section mb-28 lg:mb-44 px-8 md:px-16">
+			<div class="section-content py-12 md:px-8 xl:pt-64 xl:px-16">
 				<div
 					class="flex flex-col items-center lg:flex-row lg:justify-between w-full"
 				>
@@ -220,7 +223,7 @@
 						</p>
 					</div>
 
-					<div class="w-52 max-w-full lg:w-2/4 lg:max-w-xs xl:max-w-sm">
+					<div class="w-52 max-w-full lg:w-full lg:max-w-xs xl:max-w-xl">
 						<img
 							src="assets/images/airtel-circle.png"
 							alt="iphone screen for projects"
@@ -442,7 +445,7 @@
 			</div>
 		</section>
 
-		<section class="px-8 md:px-16">
+		<section class="download-apps-section px-8 md:px-16">
 			<div
 				class="section-content py-24 lg:py-48 sm:px-16 lg:px-32 text-center flex flex-col items-center"
 			>
@@ -555,7 +558,7 @@
 								<img
 									src="assets/images/email-icon.png"
 									alt="email"
-									class="mr-2.5"
+									class="mr-3"
 								/>
 								<p>hello@landify.co</p>
 							</div>
@@ -563,7 +566,7 @@
 								<img
 									src="assets/images/phone-icon.png"
 									alt="phone"
-									class="mr-2.5"
+									class="mr-3"
 								/>
 								<p>+91 98765 43210</p>
 							</div>
@@ -572,7 +575,7 @@
 								<img
 									src="assets/images/location-icon.png"
 									alt="location"
-									class="w-6 h-6 mr-2.5"
+									class="w-6 h-6 mr-3"
 								/>
 								<p class="flex flex-col">
 									<span> 772 Lyonwood Ave </span>
@@ -616,5 +619,6 @@
 			</div>
 		</footer>
 		<script src="./script.js"></script>
+		<script src="./script2.js"></script>
 	</body>
 </html>

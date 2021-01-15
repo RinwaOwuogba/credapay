@@ -41,6 +41,10 @@ body {
 	margin: 0 auto;
 }
 
+html.sr .section-content {
+	visibility: hidden;
+}
+
 .creda-header {
 	background-color: var(--creda-purple);
 }
@@ -91,7 +95,19 @@ body {
 	position: relative;
 	visibility: visible;
 	opacity: 1;
-	transition: opacity 0.7s;
+	margin-right: 0;
+	transition: opacity 0.9s;
+	animation: slide 0.7s linear;
+}
+
+@keyframes slide {
+	0% {
+		transform: translateX(50%);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
 }
 
 .testimonials-arrow-down {
@@ -134,6 +150,10 @@ body {
 
 footer {
 	overflow: hidden;
+}
+
+html.sr footer .section-content {
+	visibility: visible;
 }
 
 @media (max-width: 1023px) {

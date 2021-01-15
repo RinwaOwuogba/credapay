@@ -9,48 +9,42 @@ const toggleMenu = () => {
 hamburgerButton.addEventListener('click', toggleMenu);
 closeMenu.addEventListener('click', toggleMenu);
 
-const testimonialPaginationButtons = document.querySelectorAll(
-	'.testimonial-pagination-item'
-);
-
-// change active testimonial pagination button
-const setActivePaginationButton = (selectedButtonIndex) => {
-	testimonialPaginationButtons.forEach((button, index) => {
-		if (index !== selectedButtonIndex) {
-			button.classList.remove('active-tab');
-		} else {
-			button.classList.add('active-tab');
-		}
-	});
+// add scroll reveal
+var slideUp = {
+	distance: '150%',
+	origin: 'bottom',
+	opacity: null,
+	delay: 300,
+	duration: 2000,
 };
 
-// change current pair of visible testimonials
-const displayTestimonials = (buttonIndex) => {
-	// determine which group testimonials to make visible
-	// based on the button's index
-	const testionalsToDisplay = {
-		0: [0, 1],
-		1: [2, 3],
-		2: [4, 5],
-	}[buttonIndex];
+ScrollReveal().reveal('header .section-content', slideUp);
 
-	const testimonials = document.querySelectorAll('.testimonial-container');
+ScrollReveal().reveal('.features-section .section-content', {
+	...slideUp,
+	origin: 'right',
+	duration: 1500,
+});
 
-	testimonials.forEach((testimonial, index) => {
-		if (
-			testionalsToDisplay.includes(index) &&
-			!testimonial.classList.contains('visible-testimonial')
-		) {
-			testimonial.classList.add('visible-testimonial');
-		} else if (!testionalsToDisplay.includes(index)) {
-			testimonial.classList.remove('visible-testimonial');
-		}
-	});
-};
+ScrollReveal().reveal('.deals-section .section-content', {
+	...slideUp,
+	origin: 'right',
+});
 
-testimonialPaginationButtons.forEach((button, buttonIndex) =>
-	button.addEventListener('click', () => {
-		setActivePaginationButton(buttonIndex);
-		displayTestimonials(buttonIndex);
-	})
-);
+ScrollReveal().reveal('.testimonials-section .section-content', {
+	...slideUp,
+});
+
+ScrollReveal().reveal('.download-apps-section .section-content', {
+	...slideUp,
+	origin: 'left',
+	duration: 1500,
+});
+
+ScrollReveal().reveal('footer .section-content', {
+	...slideUp,
+	origin: 'left',
+	duration: 1500,
+});
+
+const man = '2';
