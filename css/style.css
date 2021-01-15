@@ -128,11 +128,12 @@ body {
 
 .shapes-image {
 	position: absolute;
-	/* width: 300px;
-	height: auto; */
 	right: 0;
-	/* bottom: 0; */
 	bottom: -15px;
+}
+
+footer {
+	overflow: hidden;
 }
 
 @media (max-width: 1023px) {
