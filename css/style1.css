@@ -2,6 +2,10 @@
 	--creda-yellow: #fdc627;
 	--creda-purple: #2c0046;
 	--ellipse-green: #9bf5af;
+	--creda-gray: #18191f;
+	--creda-black: #0b0d17;
+	--creda-text-gray: #d9dbe1;
+	--creda-torquoise: #2ec5ce;
 }
 
 * {
@@ -18,6 +22,18 @@ body {
 
 .bg-creda-yellow {
 	background-color: var(--creda-yellow);
+}
+
+.bg-creda-black {
+	background-color: var(--creda-black);
+}
+
+.bg-creda-purple {
+	background-color: var(--creda-purple);
+}
+
+.creda-color-text-gray {
+	color: var(--creda-text-gray);
 }
 
 .section-content {
@@ -68,7 +84,7 @@ body {
 .testimonial-container {
 	position: absolute;
 	visibility: hidden;
-	margin-right: 1rem;
+	margin-right: 1.875rem;
 	opacity: 0;
 }
 
@@ -102,9 +118,34 @@ body {
 	opacity: 1;
 }
 
+.color-creda-gray {
+	color: var(--creda-gray);
+}
+
+.hiring-text {
+	font-family: 'Nanum Pen Script', cursive;
+	color: var(--creda-torquoise);
+}
+
 @media (max-width: 1023px) {
 	.creda-header .phone-image-container {
 		max-width: 14rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.footer-terms-link::before {
+		content: '|';
+		font-size: 6px;
+		vertical-align: middle;
+		margin: 0 8px;
+		padding: 2.3px 0;
+		font-weight: 100;
+		background-color: var(--creda-text-gray);
+	}
+
+	.footer-terms-link:first-child::before {
+		content: '';
 	}
 }
 
@@ -113,7 +154,15 @@ body {
 		line-height: 4.2rem;
 	}
 
-	.testimonial-container {
-		max-width: 556x;
+	.line-height-xl {
+		line-height: 5.15rem;
+	}
+
+	.testimonials-section .section-content {
+		padding: 80px 165px;
+	}
+
+	.manage-section-title {
+		font-size: 4rem;
 	}
 }
