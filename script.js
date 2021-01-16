@@ -10,7 +10,7 @@ hamburgerButton.addEventListener('click', toggleMenu);
 closeMenu.addEventListener('click', toggleMenu);
 
 // add scroll reveal
-var slideUp = {
+var defaultProps = {
 	distance: '150%',
 	origin: 'bottom',
 	opacity: null,
@@ -18,33 +18,35 @@ var slideUp = {
 	duration: 2000,
 };
 
-ScrollReveal().reveal('header .section-content', slideUp);
+ScrollReveal().reveal('header .section-content', {
+	...defaultProps,
+});
 
 ScrollReveal().reveal('.features-section .section-content', {
-	...slideUp,
+	...defaultProps,
 	origin: 'right',
 	duration: 1500,
+	mobile: false,
 });
 
 ScrollReveal().reveal('.deals-section .section-content', {
-	...slideUp,
+	...defaultProps,
 	origin: 'right',
+	mobile: false,
 });
 
 ScrollReveal().reveal('.testimonials-section .section-content', {
-	...slideUp,
+	...defaultProps,
 });
 
 ScrollReveal().reveal('.download-apps-section .section-content', {
-	...slideUp,
+	...defaultProps,
 	origin: 'left',
 	duration: 1500,
 });
 
 ScrollReveal().reveal('footer .section-content', {
-	...slideUp,
+	...defaultProps,
 	origin: 'left',
 	duration: 1500,
 });
-
-const man = '2';

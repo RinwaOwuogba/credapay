@@ -37,14 +37,7 @@ const displayTestimonials = (buttonIndex) => {
 	});
 };
 
-testimonialPaginationButtons.forEach((button, buttonIndex) =>
-	button.addEventListener('click', () => {
-		setActivePaginationButton(buttonIndex);
-		displayTestimonials(buttonIndex);
-	})
-);
-
-setInterval(() => {
+const changeTestimonials = () => {
 	const noOfButtons = testimonialPaginationButtons.length;
 	let isNextButtonClicked = false;
 
@@ -60,4 +53,18 @@ setInterval(() => {
 			isNextButtonClicked = true;
 		}
 	});
-}, 7000);
+};
+
+const carousel = {
+	intervalReference: setInterval(changeTestimonials, 7000),
+};
+
+testimonialPaginationButtons.forEach((button, buttonIndex) =>
+	button.addEventListener('click', () => {
+		setActivePaginationButton(buttonIndex);
+		displayTestimonials(buttonIndex);
+
+		clearInterval(carousel.intervalReference);
+		carousel.intervalReference = setInterval(changeTestimonials, 7000);
+	})
+);

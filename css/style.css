@@ -61,6 +61,7 @@ html.sr .section-content {
 	padding-top: 20vh;
 	align-items: center;
 	background-color: var(--creda-purple);
+	width: 100vw;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -156,6 +157,12 @@ html.sr footer .section-content {
 	visibility: visible;
 }
 
+html.sr footer .section-content,
+html.sr .features-section .section-content,
+html.sr .deals-section .section-content {
+	visibility: visible;
+}
+
 @media (max-width: 1023px) {
 	.creda-header .phone-image-container {
 		max-width: 14rem;
@@ -163,6 +170,11 @@ html.sr footer .section-content {
 }
 
 @media (min-width: 1024px) {
+	html.sr footer .features-section .section-content,
+	html.sr .deals-section .section-content {
+		visibility: visible;
+	}
+
 	.footer-terms-link::before {
 		content: '|';
 		font-size: 6px;
