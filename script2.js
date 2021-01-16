@@ -1,6 +1,31 @@
-const testimonialPaginationButtons = document.querySelectorAll(
-	'.testimonial-pagination-item'
+const testimonialsPerPage = 2;
+const testimonialsButtonWrapper = document.querySelector(
+	'.testimonial-pagination'
 );
+const testimonialPaginationButtons = [];
+
+const noOfTestimonials = document.querySelectorAll('.testimonial-container')
+	.length;
+
+// create and add pagination buttons to DOM
+// based on the number of carousel items
+for (let i = 0; i < noOfTestimonials / testimonialsPerPage; i++) {
+	const paginationButton = document.createElement('button');
+	paginationButton.classList.add('testimonial-pagination-item');
+
+	if (i === 0) {
+		paginationButton.classList.add('active-tab');
+	}
+
+	testimonialPaginationButtons.push(paginationButton);
+}
+
+// only insert pagination buttons in DOM if there are multiple pages
+if (testimonialPaginationButtons.length > 1) {
+	testimonialPaginationButtons.map((button) => {
+		testimonialsButtonWrapper.appendChild(button);
+	});
+}
 
 // change active testimonial pagination button
 const setActivePaginationButton = (selectedButtonIndex) => {
@@ -15,23 +40,20 @@ const setActivePaginationButton = (selectedButtonIndex) => {
 
 // change current pair of visible testimonials
 const displayTestimonials = (buttonIndex) => {
-	// determine which group testimonials to make visible
-	// based on the button's index
-	const testionalsToDisplay = {
-		0: [0, 1],
-		1: [2, 3],
-		2: [4, 5],
-	}[buttonIndex];
-
 	const testimonials = document.querySelectorAll('.testimonial-container');
+	const testimonialsToDisplay = [];
+
+	// push indexes of next pair
+	testimonialsToDisplay.push(testimonialsPerPage * buttonIndex);
+	testimonialsToDisplay.push(testimonialsToDisplay[0] + 1);
 
 	testimonials.forEach((testimonial, index) => {
 		if (
-			testionalsToDisplay.includes(index) &&
+			testimonialsToDisplay.includes(index) &&
 			!testimonial.classList.contains('visible-testimonial')
 		) {
 			testimonial.classList.add('visible-testimonial');
-		} else if (!testionalsToDisplay.includes(index)) {
+		} else if (!testimonialsToDisplay.includes(index)) {
 			testimonial.classList.remove('visible-testimonial');
 		}
 	});
